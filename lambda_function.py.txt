@@ -1,0 +1,29 @@
+import json
+import boto3
+
+# Initialize the DynamoDB resource
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('yashvi-resume-counter')
+
+def lambda_handler(event, context):
+    # 1. Fetch the current count from DynamoDB
+    response = table.get_item(Key={'id': 'visitors'})
+    item = response.get('Item')
+    
+    # 2. Increment the count
+    # If the item doesn't exist for some reason, start at 1
+    count = item.get('count', 0) if item else 0
+    new_count = count + 1
+    
+    # 3. Update the item in the table
+    table.put_item(Item={'id': 'visitors', 'count': new_count})
+    
+    # 4. Return the new count to your website
+    return {
+        'statusCode': 200,
+        'headers': {
+            'Access-Control-Allow-Origin': '*', # Allows your S3 site to call this API
+            'Access-Control-Allow-Methods': 'GET'
+        },
+        'body': json.dumps({'count':(new_count)})
+    }

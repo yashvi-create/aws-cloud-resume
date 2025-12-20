@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yashvi Thakar - Cloud Resume</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+        .counter-box { font-size: 24px; font-weight: bold; color: #232f3e; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Yashvi Thakar</h1>
+    <p>Aspiring Cloud Engineer | AWS Enthusiast</p>
+    
+    <div class="counter-box">
+        Total Visitors: <span id="counter">0</span>
+    </div>
+
+    <script>
+        async function updateCounter() {
+            // REPLACE the URL below with YOUR Invoke URL from API Gateway
+            const url = 'https://xwpm9cgv13.execute-api.eu-north-1.amazonaws.com/';
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                document.getElementById('counter').innerText = data.count;
+            } catch (error) {
+                console.error('Error fetching counter:', error);
+            }
+        }
+        updateCounter();
+    </script>
+</body>
+</html>
