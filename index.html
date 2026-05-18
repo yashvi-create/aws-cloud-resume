@@ -1,29 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Yashvi Thakar - Cloud Resume</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yashvi Thakar — Cloud & DevOps Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
-        .counter-box { font-size: 24px; font-weight: bold; color: #232f3e; margin-top: 20px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fdf9ff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 0.5px solid #e2d3f5;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 40px rgba(155, 114, 212, 0.08);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8d5f5, #c9b3e8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #7c5cbf;
+            margin: 0 auto 1.5rem;
+            border: 2px solid #e2d3f5;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: #2e2040;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 13.5px;
+            color: #9b72d4;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            margin-bottom: 1.5rem;
+        }
+
+        .divider {
+            height: 0.5px;
+            background: #e2d3f5;
+            margin: 1.5rem 0;
+        }
+
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .pill {
+            font-size: 11.5px;
+            padding: 4px 14px;
+            border-radius: 20px;
+            background: #f5f0ff;
+            color: #6b48b0;
+            font-weight: 400;
+        }
+
+        .counter-wrap {
+            background: #f5f0ff;
+            border: 0.5px solid #e2d3f5;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .counter-label {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: #b8a8d0;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .counter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 500;
+            color: #9b72d4;
+            line-height: 1;
+        }
+
+        .counter-sub {
+            font-size: 11px;
+            color: #b8a8d0;
+            margin-top: 4px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 12.5px;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-filled {
+            background: #9b72d4;
+            color: #fff;
+        }
+
+        .btn-filled:hover { background: #7c5cbf; }
+
+        .btn-outline {
+            background: transparent;
+            color: #9b72d4;
+            border: 1px solid #c9b3e8;
+        }
+
+        .btn-outline:hover { background: #f5f0ff; }
+
+        .footer {
+            margin-top: 1.5rem;
+            font-size: 11px;
+            color: #c4b2de;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #3cb97a;
+            margin-right: 5px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
     </style>
 </head>
 <body>
-    <h1>Yashvi Thakar</h1>
-    <p>Aspiring Cloud Engineer | AWS Enthusiast</p>
-    
-    <div class="counter-box">
-        Total Visitors: <span id="counter">0</span>
+    <div class="card">
+        <div class="avatar">YT</div>
+
+        <h1 class="name">Yashvi Thakar</h1>
+        <p class="title">Cloud & DevOps Engineer · AWS · Kubernetes · IBM Cloud Certified</p>
+
+        <div class="pills">
+            <span class="pill">☁️ AWS</span>
+            <span class="pill">⎈ Kubernetes</span>
+            <span class="pill">🔐 Cybersecurity</span>
+            <span class="pill">🐧 Linux</span>
+            <span class="pill">🏗️ DevOps</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="counter-wrap">
+            <p class="counter-label">TOTAL VISITORS</p>
+            <p class="counter-number" id="counter">...</p>
+            <p class="counter-sub">
+                <span class="status-dot"></span>
+                live · powered by AWS Lambda & DynamoDB
+            </p>
+        </div>
+
+        <div class="links">
+            <a class="link-btn btn-filled" href="https://www.linkedin.com/in/yashvithakar/" target="_blank">
+                💼 LinkedIn
+            </a>
+            <a class="link-btn btn-outline" href="https://github.com/yashvi-create" target="_blank">
+                🐙 GitHub
+            </a>
+            <a class="link-btn btn-outline" href="mailto:yashvithakar003@gmail.com">
+                ✉️ Email
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Build. Automate. Repeat. ☁️✨</p>
+        </div>
     </div>
 
     <script>
         async function updateCounter() {
-            // REPLACE the URL below with YOUR Invoke URL from API Gateway
             const url = 'https://xwpm9cgv13.execute-api.eu-north-1.amazonaws.com/';
             try {
                 const response = await fetch(url);
                 const data = await response.json();
                 document.getElementById('counter').innerText = data.count;
             } catch (error) {
+                document.getElementById('counter').innerText = '✨';
                 console.error('Error fetching counter:', error);
             }
         }
